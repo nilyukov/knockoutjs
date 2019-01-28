@@ -1,0 +1,129 @@
+.blog {
+  padding: @base-size*6.8 0;
+  border-bottom: 2px solid @block-border-color;
+
+  h1 {
+    font-size: 21px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+  }
+
+  &-item {
+    margin: 30px 0;
+
+    &-img {
+      overflow: hidden;
+      height: 264px;
+
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: @base-size * 2;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+    }
+
+    &-data {
+      height: 142px;
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      &:before {
+        content: attr(data-day);
+        top: 0;
+        font-size: 100px;
+        color: #ececec;
+      }
+
+      &:after {
+        content: attr(data-month);
+        top: 50%;
+        margin-top: -11px;
+        color: #80a15c;
+        font-size: @base-size * 1.4;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    &-news {
+
+      h3 a {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: #000;
+        padding: 0;
+        transition: all 0.3s ease;
+      }
+
+      p {
+        color: darken(desaturate(spin(@green-color, 26.9438), 40.2150), 10.5882);
+        padding: 0 4px;
+        letter-spacing: 0;
+
+        &:last-of-type {
+          margin-top: 20px;
+          padding: 0 2px;
+          color: lighten(saturate(spin(@gray-color, 0.0000), 0.0000), 20.7843);
+        }
+
+        a {
+          color: darken(desaturate(spin(@green-color, 26.9438), 40.2150), 10.5882);
+          transition: all 0.3s ease;
+
+          &:before {
+            content: " ";
+          }
+
+          &:first-of-type:after {
+            content: " /";
+          }
+
+          .hover-focus-mix(@des-green-color);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .blog {
+
+    &-item {
+
+      &-news {
+        margin-top: -65px;
+
+        h3 {
+          text-shadow: 4px -4px 2px #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .blog {
+    padding: @base-size*4 0;
+  }
+}

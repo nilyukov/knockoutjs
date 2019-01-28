@@ -1,0 +1,24 @@
+.btn-state (){
+  &:hover,
+  &:focus{
+    color: #fff;
+    outline: none;
+  }
+}
+
+
+.hover-focus-mix(@color){
+  &:hover,
+  &:focus{
+    color: @color;
+  }
+}
+
+.hover-focus-mix(@color, @border-bottom){
+  &:hover,
+  &:focus{
+    color: @color;
+    border-bottom: @border-bottom;
+  }
+}
+

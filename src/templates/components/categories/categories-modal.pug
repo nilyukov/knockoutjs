@@ -1,0 +1,18 @@
+include categories-vars
+
+mixin list(id)
+    .modal(class='myModal' + id)
+        span.close(onclick='closeModal(' + id + ')') ×
+        .galleria(id='galleria' + id)
+            img(src='https://i.ytimg.com/vi/-nJFptirWlI/maxresdefault.jpg')
+            img(src='http://www.carehomedecor.com/wp-content/uploads/2016/11/outdoor-garden-decor-5.jpg')
+            img(src='http://www.carehomedecor.com/wp-content/uploads/2016/11/outdoor-garden-decor-5.jpg')
+            img(src='http://www.carehomedecor.com/wp-content/uploads/2016/11/outdoor-garden-decor-5.jpg')
+
+
+- for(var x = 0; x < 4; x++){
+    +list(x)
+- }
+
+
+

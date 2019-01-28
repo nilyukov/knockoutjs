@@ -1,0 +1,25 @@
+include featured-vars
+
+mixin list(imgSrcList, itemNumber)
+    .featured-item
+        a.featured-item-link(href="#")
+            .featured-item-view
+                .featured-item-img(data-bind="style: {'backgroundImage': 'url('+ homepage.allInfo.featured." + itemNumber + ".itemImg +')'}")
+                .featured-item-eye
+                    i.fa.fa-eye(aria-hidden='true')
+            .featured-item-description
+                 h3(data-bind="text: homepage.allInfo.featured." + itemNumber + ".itemName")
+                 p(data-bind="text: homepage.allInfo.featured." + itemNumber + ".itemPrice")
+        .featured-item-add
+            a.btn.btn-featured(href="#") Add to cart
+
+- for(var x = 0; x < 4; x++){
+    .col-md-3.col-sm-6.filter(class = itemType[x])
+        +list(imgSrcList[x], itemNumber[x])
+- }
+
+
+
+
+
+

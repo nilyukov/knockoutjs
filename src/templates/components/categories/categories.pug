@@ -1,0 +1,16 @@
+<!--ko with: itemsCategory -->
+.categories
+    .container
+        h2(data-bind="text: title")
+        p(data-bind="text: subtitle")
+        .row
+            <!--ko foreach: items -->
+                .col-md-3.col-sm-6
+                    .categories-item
+                        a.cursor(data-bind='click: $root.openGalleriaModal.bind(this, numberItems)')
+                            .categories-item-img(data-bind="style: {'background-image': 'url('+ img +')'}")
+                            .categories-item-link
+                                h3(data-bind="text: category")
+                                p(data-bind="text: numberItems")
+            <!-- /ko -->
+<!-- /ko -->

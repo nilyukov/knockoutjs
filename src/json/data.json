@@ -1,0 +1,237 @@
+{
+  "homepage": {
+    "allInfo": {
+      "header": {
+        "topNavbar": {
+          "leftNav": {
+            "items": [
+              "Log in",
+              "Register",
+              "Account"
+            ]
+          },
+          "rightNav": {
+            "items": [
+              "Usd",
+              "English",
+              "Wishlist"
+            ]
+          }
+        },
+        "mainNavbar": {
+          "brandLogo": "assets/img/logo.png",
+          "firstLi": "Home",
+          "secondLi": "Women",
+          "thirdLi": "Men",
+          "fourthLi": "Features",
+          "fifthLi": "Services",
+          "fifthLiSubMenu": {
+            "firstLi": "action",
+            "secondLi": "Another action",
+            "thirdLi": "Something else here",
+            "fourthLi": "Separated link"
+          },
+          "sixthLi": "Blog"
+        }
+      },
+      "carousel": {
+        "items": [
+          {
+            "img": "assets/img/carousel-slide-1.jpg",
+            "category": "flowie",
+            "title": "Garden of plants & flowers"
+          },
+          {
+            "img": "assets/img/carousel-slide-2.jpg",
+            "category": "flowie",
+            "title": "Garden of plants & flowers"
+          },
+          {
+            "img": "assets/img/carousel-slide-3.jpg",
+            "category": "flowie",
+            "title": "Garden of plants & flowers"
+          }
+        ]
+      },
+      "offers": {
+        "items": [
+          {
+            "img": "assets/img/offers-bg-1.jpg",
+            "title": "Gifts for her/him"
+          },
+          {
+            "img": "assets/img/offers-bg-2.jpg",
+            "title": "Browse all products"
+          },
+          {
+            "img": "assets/img/offers-bg-3.jpg",
+            "title": "Our highlight items"
+          }
+        ]
+      },
+      "categories": {
+        "title": "shop by categories",
+        "subtitle": "Hawker & Jonre PSD Template is an awesome idea for your online shop. Clean it will be very easy to customize, enable you to either create a stunning layout of your own or just do some minor and some adjustments.",
+        "items": [
+          {
+            "img": "assets/img/categories-featured-bg-1.jpg",
+            "category": "Garden Decor",
+            "numberItems": 15
+          },
+          {
+            "img": "assets/img/categories-featured-bg-2.jpg",
+            "category": "Home Decor",
+            "numberItems": 21
+          },
+          {
+            "img": "assets/img/categories-featured-bg-3.jpg",
+            "category": "Company Decor",
+            "numberItems": 8
+          },
+          {
+            "img": "assets/img/categories-featured-bg-4.jpg",
+            "category": "Outside Decor",
+            "numberItems": 27
+          }
+        ]
+      },
+      "featured": {
+        "title": "featured items",
+        "items": [
+          {
+            "itemImg": "assets/img/categories-featured-bg-1.jpg",
+            "itemName": "Small cactus letiety pot from France",
+            "itemPrice": 45,
+            "itemType": [
+              "homeDecor",
+              "outDoor",
+              "forGift"
+            ]
+          },
+          {
+            "itemImg": "assets/img/categories-featured-bg-2.jpg",
+            "itemName": "Small cactus letiety pot from France",
+            "itemPrice": 45,
+            "itemType": [
+              "workspace",
+              "forGift"
+            ]
+          },
+          {
+            "itemImg": "assets/img/categories-featured-bg-3.jpg",
+            "itemName": "Small cactus letiety pot from France",
+            "itemPrice": 45,
+            "itemType": [
+              "outDoor",
+              "forGift"
+            ]
+          },
+          {
+            "itemImg": "assets/img/categories-featured-bg-4.jpg",
+            "itemName": "Small cactus letiety pot from France",
+            "itemPrice": 45,
+            "itemType": [
+              "forGift",
+              "outDoor",
+              "workspace"
+            ]
+          }
+        ]
+      },
+      "advantages": {
+        "items": [
+          {
+            "title": "free delivery",
+            "text": "Just do some minor and some adjustments",
+            "img": "assets/img/advantages-bg-1.jpg",
+            "icon": "assets/img/icon.png"
+          },
+          {
+            "title": "buy online",
+            "text": "Just do some minor and some adjustments",
+            "img": "assets/img/advantages-bg-2.jpg",
+            "icon": "assets/img/icon.png"
+          },
+          {
+            "title": "best services",
+            "text": "Just do some minor and some adjustments",
+            "img": "assets/img/advantages-bg-3.jpg",
+            "icon": "assets/img/icon.png"
+          },
+          {
+            "title": "discounts",
+            "text": "Just do some minor and some adjustments",
+            "img": "assets/img/advantages-bg-4.jpg",
+            "icon": "assets/img/icon.png"
+          }
+        ]
+      },
+      "blog": {
+        "title": "from our blog",
+        "items": [
+          {
+            "img": "assets/img/blog-bg-1.jpg",
+            "day": 12,
+            "month": "march",
+            "title": "News: They are not part of this theme anything and anymore",
+            "subtitle": "Posted by",
+            "userName": "themesun",
+            "numberComments": "0 comments",
+            "text": "Use, by you or one client, in a and ssingle end product which end tos users are not charged for. The kos total price an includes the item. Malesuada ultricies. Grumpy wizards make toxic brew for the evil Queen..."
+          },
+          {
+            "img": "assets/img/blog-bg-2.jpg",
+            "day": 24,
+            "month": "march",
+            "title": "News: They are not part of this theme anything and anymore",
+            "subtitle": "Posted by",
+            "userName": "themesun",
+            "numberComments": "0 comments",
+            "text": "Use, by you or one client, in a and ssingle end product which end tos users are not charged for. The kos total price an includes the item. Malesuada ultricies. Grumpy wizards make toxic brew for the evil Queen..."
+          }
+        ]
+      },
+      "logos": {
+        "items": [
+          {
+            "img": "assets/img/first-logo.png"
+          },
+          {
+            "img": "assets/img/second-logo.png"
+          },
+          {
+            "img": "assets/img/third-logo.png"
+          },
+          {
+            "img": "assets/img/fourh-logo.png"
+          },
+          {
+            "img": "assets/img/fifth-logo.png"
+          }
+        ]
+      },
+      "footer": {
+        "about": {
+          "title": "About us",
+          "description": "Flowie Sweets store is a premium theme built for online shop.",
+          "imgBrand": "assets/img/logo.png"
+        },
+        "information": {
+          "title": "information",
+          "items": [
+            "Shipping and Policies",
+            "Delivery",
+            "My Account",
+            "Asked Questions",
+            "Browse Products",
+            "Payment & Returns"
+          ]
+        },
+        "subscribe": {
+          "title": "subscribe",
+          "copyright": "© Flowie Wordpress. Site by Zooka.io. All right Reserved 2015."
+        }
+      }
+    }
+  }
+}

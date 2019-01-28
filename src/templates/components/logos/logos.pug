@@ -1,0 +1,10 @@
+.logos
+    .container
+        .row
+            div(data-bind="template: { name: 'logosTemplate', foreach: itemsLogo}")
+            script#logosTemplate(type='text/html').
+                <div class="logos-item">
+                    <a href="#">
+                        <img class="img-responsive" data-bind="attr: {src: img}" alt="logos"/>
+                    </a>
+                </div>

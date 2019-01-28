@@ -1,0 +1,21 @@
+include offers-vars
+
+mixin colors(bgColorsOvrl,imgSrcList, offerWords)
+    .offers-item.overlay(class=bgColorsOvrl, style="background-image: url(" + imgSrcList + ");")
+        .offers-item-link
+            a.btn.btn-offers(href='#') #{offerWords}
+
+
+ - for(var x = 0; x < 3; x++){
+     if x!==2
+         .col-md-4.col-sm-6
+             +colors(bgColorsOvrl[x],imgSrcList[x], offerWords[x])
+     else
+         .col-md-4.col-sm-6.col-sm-offset-3.col-md-offset-0
+             +colors(bgColorsOvrl[x],imgSrcList[x], offerWords[x])
+ - }
+
+
+
+
+

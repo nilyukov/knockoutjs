@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="description" content="Garden Example">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Garden</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="l-top-navbar">
+        <nav class="navbar navbar-default">
+          <div class="container">
+            <div class="navbar-collapse">
+              <ul class="nav navbar-nav navbar-left" data-bind="foreach: topLeftNavbarData">
+                <li><a href="#" data-bind="text: $data"></a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right" data-bind="foreach: topRightNavbarData">
+                <li><a href="#" data-bind="text: $data"></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="l-main-navbar">
+        <nav class="navbar navbar-default" role="navigation" data-bind="foreach: mainNavbar">
+          <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><img class="img-responsive" data-bind="attr: {src: brandLogo}" alt="Brand"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-bind="text: firstLi"></a></li>
+                <li><a href="#" data-bind="text: secondLi"></a></li>
+                <li><a href="#" data-bind="text: thirdLi"></a></li>
+                <li><a href="#" data-bind="text: fourthLi"></a></li>
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown"><span data-bind="text: fifthLi"></span><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" data-bind="text: fifthLiSubMenu.firstLi"></a></li>
+                    <li><a href="#" data-bind="text: fifthLiSubMenu.secondLi"></a></li>
+                    <li><a href="#" data-bind="text: fifthLiSubMenu.thirdLi"></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-bind="text: fifthLiSubMenu.fourthLi"></a></li>
+                  </ul>
+                </li>
+                <li><a href="#" data-bind="text: sixthLi"></a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="slider-show">
+      <div class="container">
+        <div class="carousel slide" id="carousel-slide" data-ride="carousel"><!-- ko foreach: itemsCarousel -->
+          <div class="carousel-inner">
+            <div class="item" data-bind="style: {'background-image': 'url('+ img +')'}, css: { 'active': $index() == 0}">
+              <div class="carousel-caption">
+                <h3 data-bind="text: category"></h3>
+                <h1 data-bind="text: title"></h1><a class="btn btn-sample" href="#">View products</a>
+              </div>
+            </div>
+          </div><!-- /ko --><a class="left carousel-control" href="#carousel-slide" role="button" data-slide="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><a class="right carousel-control" href="#carousel-slide" role="button" data-slide="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="offers">
+      <div class="container">
+        <div class="row" data-bind="foreach: itemsOffer">
+          <div class="col-md-4 col-sm-6" data-bind="css: {'col-sm-offset-3 col-md-offset-0': $index() === 2}">
+            <div class="offers-item overlay" data-bind="style: {'background-image': 'url('+ img +')'}, css: {'dark-green': $index() === 0, 'pink': $index() === 1, 'light-green': $index() === 2}">
+              <div class="offers-item-link"><a class="btn btn-offers" href="#" data-bind="text: title"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--ko with: itemsCategory -->
+    <div class="categories">
+      <div class="container">
+        <h2 data-bind="text: title"></h2>
+        <p data-bind="text: subtitle"></p>
+        <div class="row"><!--ko foreach: items -->
+          <div class="col-md-3 col-sm-6">
+            <div class="categories-item"><a class="cursor" data-bind="click: $root.openGalleriaModal.bind(this, numberItems)">
+                <div class="categories-item-img" data-bind="style: {'background-image': 'url('+ img +')'}"></div>
+                <div class="categories-item-link">
+                  <h3 data-bind="text: category"></h3>
+                  <p data-bind="text: numberItems"></p>
+                </div></a></div>
+          </div><!-- /ko -->
+        </div>
+      </div>
+    </div><!-- /ko -->
+    <div class="modal myModal"><span class="close" data-bind="click: $root.closeModal">×</span>
+      <div class="galleria" id="galleria"></div>
+    </div>
+    <div class="featured" data-bind="with: itemsFeatured">
+      <div class="container">
+        <div class="row">
+          <h2 data-bind="text: title"></h2>
+          <nav class="navbar">
+            <div class="text-center">
+              <ul class="nav navbar-nav" data-bind="foreach:  $root.tagNames">
+                <li>
+                  <button data-bind="text: $data.active(), click: $root.showItems.bind($data, $root.tagTypes()[$index()], $index())"></button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div data-bind="template: { name: 'featuredTemplate', foreach: items}"></div>
+          <script id="featuredTemplate" type="text/html">
+            <div data-bind="css: 'col-md-3 col-sm-6 ' + itemType.join(' '),  fadeVisible: (itemType.indexOf($root.currentTag()) !== -1) || ($root.currentTag() === 'all') ">
+                <div class="featured-item">
+                    <a class="featured-item-link" href="#">
+                        <div class="featured-item-view">
+                            <div class="featured-item-img" data-bind="style: {'background-image': 'url('+ itemImg +')'}"></div>
+                            <div class="featured-item-eye">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="featured-item-description" >
+                            <h3 data-bind="text: itemName"></h3>
+                            <p data-bind="text: itemPrice"></p>
+                        </div>
+                    </a>
+                    <div class="featured-item-add">
+                        <a class="btn btn-featured" href="#">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="advantages">
+      <div class="container">
+        <div class="row"><!-- ko template: { name: 'advantageTemplate', foreach: itemsAdvantage }-->
+<!-- /ko -->
+          <script id="advantageTemplate" type="text/html">
+            <div class="col-md-3 col-sm-6">
+              <div class="advantages-item advantages-overlay" data-bind="style: {'background-image': 'url('+ img +')'}, css: 'advantages-item-bg' ">
+                <div class="advantages-item-description"><img data-bind="attr: {src: icon}">
+                  <h3 data-bind="text: title"></h3>
+                  <p data-bind="text: text"></p>
+                </div>
+              </div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div><!--ko with: itemsBlog -->
+    <div class="blog">
+      <div class="container">
+        <header>
+          <h1 data-bind="text: title"></h1>
+        </header>
+        <div class="row"><!-- ko template: { name: 'blogTemplate', foreach: items }-->
+<!-- /ko -->
+          <script id="blogTemplate" type="text/html">
+            <div class="col-md-6 col-sm-6">
+              <div class="blog-item">
+                <div class="blog-item-img"><a href="#" data-bind="style: {'background-image': 'url('+ img +')'}"></a></div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="blog-item-data" data-bind="attr: {'data-day': day, 'data-month': month}"></div>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="blog-item-news">
+                      <h3><a href="#" data-bind="text: title"></a></h3>
+                      <p><span data-bind="text: subtitle"></span><a href="#" data-bind="text: userName"></a><a href="#" data-bind="text: numberComments"></a></p>
+                      <p data-bind="text: text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div><!-- /ko -->
+    <div class="logos">
+      <div class="container">
+        <div class="row">
+          <div data-bind="template: { name: 'logosTemplate', foreach: itemsLogo}"></div>
+          <script id="logosTemplate" type="text/html">
+            <div class="logos-item">
+                <a href="#">
+                    <img class="img-responsive" data-bind="attr: {src: img}" alt="logos"/>
+                </a>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="footer" data-bind="foreach: itemsFooter">
+      <div class="container">
+        <div class="row">
+          <div class="footer-item">
+            <div class="col-md-4">
+              <h3 data-bind="text: about.title"></h3><img class="img-responsive" data-bind="attr: {src: about.imgBrand}" alt="Brand">
+              <p data-bind="text: about.description"></p>
+              <div class="footer-icons-group"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-pinterest"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+            </div>
+          </div>
+          <div class="footer-item">
+            <div class="col-md-4">
+              <h3 data-bind="text: information.title"></h3>
+              <div class="footer-links-group">
+                <ul class="nav" data-bind="foreach: information.items">
+                  <li><a href="#" data-bind="text: $data"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-item">
+            <div class="col-md-4">
+              <h3 data-bind="text: subscribe.title"></h3>
+              <form role="form">
+                <div class="form-group">
+                  <input class="form-control input-email" type="email" placeholder="Your email">
+                </div>
+                <button class="btn btn-email" type="submit">Send us</button>
+              </form>
+              <div class="copyright">
+                <p data-bind="text: subscribe.copyright"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="assets/js/scripts.min.js"></script>
+  </body>
+</html>

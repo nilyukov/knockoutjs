@@ -1,0 +1,127 @@
+.advantages {
+  border-bottom: 2px solid @block-border-color;
+
+  .col-md-3:not(:last-of-type) {
+    padding-right: 1px;
+  }
+
+  .col-md-3:not(:first-of-type) {
+    padding-left: 0;
+  }
+
+  &-item {
+    position: relative;
+    height: 410px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    transition: all 0.5s ease;
+
+    &.advantages-item-bg {
+
+        &:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          background: lighten(saturate(spin(@gray-color, 0.0000), 0.0000), 44.3137);;
+          visibility: visible;
+          opacity: 1;
+          transition: all 0.5s ease;
+
+      }
+    }
+
+    &:hover {
+
+      h3,
+      p {
+        color: #fff;
+      }
+
+      &.advantages-item-bg {
+
+          &:after {
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+
+    }
+
+    &-description {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 116px 40px 130px;
+      text-align: center;
+      z-index: 5;
+      cursor: default;
+
+      h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: @dark-green-color;
+      }
+
+      p {
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: lighten(saturate(spin(@gray-color, 0.0000), 0.0000), 7.8431);
+      }
+    }
+
+    &.advantages-overlay:hover {
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: rgba(189, 197, 36, 0.6);
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .advantages {
+
+    &-item {
+      height: 220px;
+
+      &-description {
+        height: 100%;
+        padding: 40px 20px;
+      }
+    }
+
+    .col-md-3:not(:last-of-type) {
+      padding-right: 15px;
+    }
+
+    .col-md-3:not(:first-of-type) {
+      padding-left: 15px;
+    }
+
+    .col-md-3:not(:last-of-type) {
+      padding-bottom: 1px;
+    }
+
+    .col-md-3:not(:first-of-type) {
+      padding-top: 0;
+    }
+  }
+}
+
+

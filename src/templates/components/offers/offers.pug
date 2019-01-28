@@ -1,0 +1,7 @@
+.offers
+    .container
+        .row(data-bind="foreach: itemsOffer")
+                .col-md-4.col-sm-6(data-bind="css: {'col-sm-offset-3 col-md-offset-0': $index() === 2}")
+                    .offers-item.overlay(data-bind="style: {'background-image': 'url('+ img +')'}, css: {'dark-green': $index() === 0, 'pink': $index() === 1, 'light-green': $index() === 2}")
+                        .offers-item-link
+                            a.btn.btn-offers(href='#', data-bind='text: title')

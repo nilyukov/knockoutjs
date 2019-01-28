@@ -1,0 +1,35 @@
+.featured(data-bind="with: itemsFeatured")
+    .container
+        .row
+            h2(data-bind="text: title")
+            nav.navbar
+                .text-center
+                    ul.nav.navbar-nav(data-bind="foreach:  $root.tagNames")
+                        li
+                            button(data-bind="text: $data.active(), click: $root.showItems.bind($data, $root.tagTypes()[$index()], $index())")
+
+            div(data-bind="template: { name: 'featuredTemplate', foreach: items}")
+            script#featuredTemplate(type='text/html').
+                <div data-bind="css: 'col-md-3 col-sm-6 ' + itemType.join(' '),  fadeVisible: (itemType.indexOf($root.currentTag()) !== -1) || ($root.currentTag() === 'all') ">
+                    <div class="featured-item">
+                        <a class="featured-item-link" href="#">
+                            <div class="featured-item-view">
+                                <div class="featured-item-img" data-bind="style: {'background-image': 'url('+ itemImg +')'}"></div>
+                                <div class="featured-item-eye">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="featured-item-description" >
+                                <h3 data-bind="text: itemName"></h3>
+                                <p data-bind="text: itemPrice"></p>
+                            </div>
+                        </a>
+                        <div class="featured-item-add">
+                            <a class="btn btn-featured" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+

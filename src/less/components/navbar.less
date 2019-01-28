@@ -1,0 +1,90 @@
+.navbar-default {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  text-transform: uppercase;
+
+  .navbar-nav li a {
+    color: @light-gray-color;
+    transition: all 0.5s;
+
+    .hover-focus-mix(@des-green-color);
+  }
+}
+
+.navbar {
+  border-bottom: 1px solid @block-border-color;
+  margin-bottom: @base-size*2.8;
+
+  &-brand {
+    margin: 0;
+    padding: 0 @base-size;
+
+    img {
+      width: @base-size*10;
+      height: @base-size*3.42;
+      padding-left: 15px;
+    }
+  }
+
+  &-collapse {
+    max-height: none;
+  }
+}
+
+.l-main-navbar .navbar-default .navbar-nav {
+
+  li {
+    a {
+      color: @dark-gray-color;
+      transition: color 0.5s ease;
+      border-bottom: 3px solid transparent;
+      background-image: none;
+
+      &,
+      &:focus,
+      &:active {
+        background-color: transparent
+      }
+
+      .hover-focus-mix(@des-green-color; 3px solid @des-green-color);
+
+    }
+
+    &.dropdown li {
+      a {
+
+        &:hover,
+        &:focus {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .l-top-navbar {
+
+    .navbar-right {
+      display: none;
+    }
+
+    .navbar-left {
+      display: flex;
+
+      li:last-of-type {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .l-main-navbar .navbar-brand img {
+    width: @base-size*9.2;
+    height: @base-size*2.88;
+  }
+}

@@ -1,0 +1,124 @@
+.carousel {
+  min-height: @base-size*44;
+  margin-bottom: @base-size;
+  overflow-x: hidden;
+
+  &-caption {
+    overflow: visible;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 50px 15px;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: @base-size*6;
+    text-align: center;
+
+    h1 {
+      font-size: @base-size*6;
+      font-family: @font-family-main-heading;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    h3 {
+      color: @green-color;
+      text-align: center;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      &:before,
+      &:after {
+        content: "";
+        border-bottom: 2px solid @des-green-color;
+        width: @base-size*1.78;
+        height: @base-size*0.8;
+        position: absolute;
+        top: 0;
+
+      }
+
+      &:before {
+        margin-left: -@base-size*2.50;
+      }
+
+      &:after {
+        margin-left: @base-size*0.70;
+      }
+    }
+  }
+  &-control {
+    color: @light-gray-color;
+    opacity: unset;
+    width: @base-size*6;
+    height: @base-size*6;
+    border-radius: 50%;
+    top: 40%;
+    z-index: 15;
+    text-shadow: none;
+    transition: all .3s ease-in;
+
+    &:hover,
+    &:focus {
+      opacity: unset;
+      color: @des-green-color;
+    }
+    &.left,
+    &.right {
+      background-image: none;
+      background-color: #fff;
+    }
+
+    &.left {
+      left: -@base-size*3.2;
+    }
+
+    &.right {
+      right: -@base-size*3.2;
+    }
+
+    .fa-arrow-left,
+    .fa-arrow-right {
+      position: absolute;
+      top: 60%;
+      z-index: 5;
+      display: inline-block;
+      width: @base-size*1.070;
+      height: @base-size*1.070;
+      margin-top: -@base-size*1.070;
+      margin-left: -@base-size*1.070;
+      font-size: @base-size*1.070;
+    }
+    .fa-arrow-left {
+      left: @base-size*4.64;
+    }
+    .fa-arrow-right {
+      right: @base-size*3.570;
+    }
+  }
+
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: @base-size*44;
+}
+
+@media (max-width: 582px) {
+  .carousel-caption {
+    top: @base-size*10.70;
+
+    h1 {
+      font-size: @base-size*4;
+    }
+  }
+}
+
+

@@ -1,0 +1,17 @@
+.slider-show
+    .container
+        #carousel-slide.carousel.slide(data-ride='carousel')
+            <!-- ko foreach: itemsCarousel -->
+            .carousel-inner
+                .item(data-bind="style: {'background-image': 'url('+ img +')'}, css: { 'active': $index() == 0}")
+                    .carousel-caption
+                        h3(data-bind="text: category")
+                        h1(data-bind="text: title")
+                        a.btn.btn-sample(href='#') View products
+            <!-- /ko -->
+            a.left.carousel-control(href='#carousel-slide', role='button', data-slide='prev')
+                i.fa.fa-arrow-left(aria-hidden='true')
+            a.right.carousel-control(href='#carousel-slide', role='button', data-slide='next')
+                i.fa.fa-arrow-right(aria-hidden='true')
+
+

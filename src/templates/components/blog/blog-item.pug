@@ -1,0 +1,23 @@
+<!-- ko template: { name: 'blogTemplate', foreach: items }-->
+<!-- /ko -->
+script#blogTemplate(type='text/html')
+    .col-md-6.col-sm-6
+        .blog-item
+            .blog-item-img
+                a(href='#' data-bind="style: {'background-image': 'url('+ img +')'}")
+            .row
+                .col-md-3
+                    .blog-item-data(data-bind="attr: {'data-day': day, 'data-month': month}")
+                .col-md-9
+                    .blog-item-news
+                        h3
+                            a(href='#' data-bind='text: title')
+                        p
+                            span(data-bind='text: subtitle')
+                            a(href='#' data-bind='text: userName')
+                            a(href='#' data-bind='text: numberComments')
+                        p(data-bind='text: text')
+
+
+
+

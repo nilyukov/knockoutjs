@@ -1,0 +1,56 @@
+header
+    .l-top-navbar
+        nav.navbar.navbar-default
+            .container
+                .navbar-collapse
+                    ul.nav.navbar-nav.navbar-left(data-bind="foreach: topLeftNavbarData")
+                        li
+                            a(href='#', data-bind="text: $data")
+                    ul.nav.navbar-nav.navbar-right(data-bind="foreach: topRightNavbarData")
+                        li
+                            a(href='#', data-bind="text: $data")
+
+    .l-main-navbar
+        nav.navbar.navbar-default(role='navigation', data-bind="foreach: mainNavbar")
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-1')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+
+                    a.navbar-brand(href='#')
+                        img.img-responsive(data-bind="attr: {src: brandLogo}", alt='Brand')
+                #navbar-collapse-1.collapse.navbar-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='#', data-bind="text: firstLi")
+                        li
+                            a(href='#', data-bind="text: secondLi")
+                        li
+                            a(href='#', data-bind="text: thirdLi")
+                        li
+                            a(href='#', data-bind="text: fourthLi")
+                        li.dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                                span(data-bind="text: fifthLi")
+                                b.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#', data-bind="text: fifthLiSubMenu.firstLi")
+                                li
+                                    a(href='#', data-bind="text: fifthLiSubMenu.secondLi")
+                                li
+                                    a(href='#', data-bind="text: fifthLiSubMenu.thirdLi")
+                                li.divider
+                                li
+                                    a(href='#', data-bind="text: fifthLiSubMenu.fourthLi")
+                        li
+                            a(href='#', data-bind="text: sixthLi")
+                        li
+                            a(href='#')
+                                i.fas.fa-shopping-cart
+                        li
+                            a(href='#')
+                                i.fas.fa-search

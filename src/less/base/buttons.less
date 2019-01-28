@@ -1,0 +1,70 @@
+.btn {
+  text-transform: uppercase;
+
+  &-email {
+    width: 150px;
+    background: @green-color;
+    border-radius: 0;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background: @gray-color;
+      color: #fff;
+    }
+  }
+
+  &-offers {
+    height: 46px;
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    letter-spacing: 2px;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+  }
+
+  &-sample {
+    color: #fff;
+    background-color: @dark-gray-color;
+    border-radius: 0;
+    border: 0;
+    width: auto;
+    padding: 12px 24px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: @light-gray-color;
+    }
+  }
+
+}
+
+.featured-item-add {
+  background-color: lighten(saturate(spin(@gray-color, 0.0000), 0.0000), 44.3137);;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 50px;
+  transition: 0.3s ease;
+
+  .btn-featured {
+    width: 100%;
+    padding: 15px;
+    color: @dark-gray-color;
+    .btn-state();
+  }
+
+  &:hover {
+    background-color: darken(desaturate(spin(#dade55, 26.0094), 41.0055), 10.5882);
+  }
+}
+

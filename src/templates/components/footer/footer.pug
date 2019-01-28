@@ -1,0 +1,46 @@
+.footer(data-bind="foreach: itemsFooter")
+    .container
+        .row
+            .footer-item
+                .col-md-4
+                    h3(data-bind="text: about.title")
+                    img.img-responsive(data-bind="attr: {src: about.imgBrand}", alt="Brand")
+                    p(data-bind="text: about.description")
+                    .footer-icons-group
+                        a(href="#")
+                            i.fab.fa-facebook-f
+                        a(href="#")
+                            i.fab.fa-twitter
+                        a(href="#")
+                            i.fab.fa-pinterest
+                        a(href="#")
+                            i.fab.fa-youtube
+                        a(href="#")
+                            i.fab.fa-instagram
+
+            .footer-item
+                .col-md-4
+                    h3(data-bind="text: information.title")
+                    .footer-links-group
+                        ul.nav(data-bind="foreach: information.items")
+                            li
+                                a(href="#", data-bind="text: $data")
+
+            .footer-item
+                .col-md-4
+                    h3(data-bind="text: subscribe.title")
+                    form(role='form')
+                        .form-group
+                            input.form-control.input-email(type='email', placeholder='Your email')
+                        button.btn.btn-email(type='submit') Send us
+                    .copyright
+                        p(data-bind="text: subscribe.copyright")
+
+
+
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js')
+
+script(src='assets/js/scripts.min.js')

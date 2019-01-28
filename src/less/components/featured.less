@@ -1,0 +1,143 @@
+.featured {
+  padding: @base-size*6.8 0;
+  border-bottom: 2px solid @block-border-color;
+
+
+  h2 {
+    font-size: 21px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+  .navbar-nav {
+    float: none;
+    display: inline-block;
+
+    li {
+
+      button {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: @light-gray-color;
+        padding: @base-size*1.42;
+        transition: 0.5s ease;
+        background: none;
+        border: none;
+
+        &:hover,
+        &:focus {
+          background-color: unset;
+          border: none;
+          outline: none;
+        }
+
+        &:hover {
+          color: @dark-green-color;
+        }
+      }
+
+      &.active button{
+        color: @dark-green-color;
+      }
+    }
+  }
+
+  &-item {
+    margin: @base-size*1.42 0 @base-size*1.8;
+
+    &-eye {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: @base-size*5.36;
+      width: @base-size*5.36;
+      border-top: @base-size*5.36 solid #fff;
+      border-right: @base-size*5.36 solid transparent;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+
+      .fa-eye {
+        position: absolute;
+        top: -@base-size*4.28;
+        left: @base-size*1.070;
+        right: 0;
+        bottom: 0;
+        color: #323232;
+        text-decoration: none;
+        text-align: left;
+      }
+    }
+
+    &-link {
+
+      &:hover {
+
+        .featured-item-view {
+          border-width: 0;
+        }
+
+        .featured-item-img {
+          transform: scale(1.2);
+        }
+
+        .featured-item-eye {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &-view {
+      height: @base-size*16.8;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid lighten(saturate(spin(@gray-color, 0.0000), 0.0000), 44.3137);
+      border-bottom: none;
+      transition: border 0.3s ease;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.5s ease;
+    }
+
+    &-description {
+      border: 2px solid lighten(saturate(spin(@gray-color, 0.0000), 0.0000), 44.3137);
+      border-top: none;
+      text-align: center;
+
+      h3 {
+        font-size: 12px;
+        padding: 24px 34px 15px;
+        letter-spacing: 0;
+        margin: 0;
+      }
+
+      p {
+        font-size: 12px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  .featured {
+    padding: @base-size*4 0;
+
+    & .navbar-nav li button{
+      padding: 10px;
+    }
+  }
+}
+
+
+

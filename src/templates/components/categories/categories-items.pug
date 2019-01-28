@@ -1,0 +1,21 @@
+include categories-vars
+
+mixin list(imgSrcList,categoriesWords, categoriesNumItems, x)
+    .categories-item
+        a.cursor(onclick='openModal(' + x + ');')
+            .categories-item-img(style="background-image: url(" + imgSrcList + ");")
+            .categories-item-link
+                h3  #{categoriesWords}
+                p   (#{categoriesNumItems} Items)
+
+
+
+
+- for(var x = 0; x < 4; x++){
+    .col-md-3.col-sm-6
+        +list(imgSrcList[x], categoriesWords[x], categoriesNumItems[x], x+1)
+- }
+
+
+
+

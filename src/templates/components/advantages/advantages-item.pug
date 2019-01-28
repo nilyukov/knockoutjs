@@ -1,0 +1,9 @@
+<!-- ko template: { name: 'advantageTemplate', foreach: itemsAdvantage }-->
+<!-- /ko -->
+script#advantageTemplate(type='text/html')
+    .col-md-3.col-sm-6
+        .advantages-item.advantages-overlay(data-bind="style: {'background-image': 'url('+ img +')'}, css: 'advantages-item-bg' ")
+            .advantages-item-description
+                img(data-bind='attr: {src: icon}')
+                h3(data-bind='text: title')
+                p(data-bind='text: text')
